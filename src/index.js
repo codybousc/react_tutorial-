@@ -1,21 +1,27 @@
 // Code here!
-var React = require('react');
-var ReactDOM = require('react-dom');
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-//declaration
-var NameTag = React.createClass({
-  render: function() {
-    return <h1> Hello, my name is {this.props.person.title}, {this.props.person.name}! </h1>;
+
+export default class NameTag extends React.Component {
+  constructor(props) {
+    super(props);
   }
-});
 
-var personData = {
-  name: 'Cody Beeze',
-  title: 'Big C'
-};
+  render() {
+    return (
+      <div>
+        I am a name Tag. My Name is NameTag
+      </div>
+    );
+  }
+}
+
+NameTag.propTypes = {};
+
 
 //rendering of react component
 ReactDOM.render(
-  <NameTag person={personData} />,
+  <NameTag />,
   document.getElementById('root')
-)
+);
